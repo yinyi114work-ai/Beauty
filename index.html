@@ -3,410 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Threads 曝光與客源成長提案 Demo</title>
-  <style>
-    :root {
-      --bg: #f7efe5;
-      --card: #fffaf4;
-      --text: #3d332b;
-      --muted: #7c6c5f;
-      --accent: #b88a64;
-      --accent2: #d8b89a;
-      --line: #ead8c6;
-      --soft: #f1dfcc;
-      --pink: #d9a6a1;
-      --green: #9cae91;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: linear-gradient(180deg, #f7efe5 0%, #fbf6ef 100%);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    header {
-      padding: 56px 24px 36px;
-      text-align: center;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(216,184,154,.45), transparent 30%),
-        radial-gradient(circle at 80% 0%, rgba(217,166,161,.35), transparent 28%);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,250,244,.8);
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0 auto;
-      max-width: 840px;
-      font-size: clamp(30px, 6vw, 56px);
-      line-height: 1.15;
-      letter-spacing: .02em;
-    }
-
-    .subtitle {
-      max-width: 720px;
-      margin: 18px auto 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .cta-row {
-      margin-top: 26px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 12px 20px;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(184,138,100,.18);
-    }
-
-    .btn.secondary {
-      background: #fffaf4;
-      color: var(--accent);
-      border: 1px solid var(--line);
-      box-shadow: none;
-    }
-
-    main {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto 72px;
-    }
-
-    section {
-      margin-top: 34px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card {
-      background: rgba(255,250,244,.86);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 24px;
-      box-shadow: 0 16px 36px rgba(92,65,43,.06);
-    }
-
-    h2 {
-      font-size: 28px;
-      margin: 0 0 14px;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    p { margin: 0 0 12px; }
-
-    .muted { color: var(--muted); }
-
-    .number {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--soft);
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .pill-list {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .pill {
-      background: #f4e4d3;
-      border: 1px solid #ead3bc;
-      color: #6d5746;
-      border-radius: 999px;
-      padding: 6px 11px;
-      font-size: 14px;
-    }
-
-    .mock-phone {
-      max-width: 380px;
-      margin: 0 auto;
-      background: #1f1f1f;
-      border-radius: 38px;
-      padding: 12px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.16);
-    }
-
-    .screen {
-      background: #fffaf4;
-      border-radius: 28px;
-      overflow: hidden;
-      min-height: 600px;
-    }
-
-    .thread-header {
-      padding: 18px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-    }
-
-    .avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink), var(--accent2));
-    }
-
-    .post {
-      padding: 18px;
-      border-bottom: 1px solid var(--line);
-      font-size: 15px;
-    }
-
-    .handle {
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .actions {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 10px;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 6px;
-      bottom: 6px;
-      width: 2px;
-      background: var(--line);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 18px;
-      padding-left: 18px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -20px;
-      top: 8px;
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .demo-box {
-      background: #fff;
-      border-radius: 22px;
-      padding: 20px;
-      border: 1px solid var(--line);
-    }
-
-    label {
-      display: block;
-      font-weight: 700;
-      margin: 10px 0 6px;
-    }
-
-    select, textarea, input {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 11px 12px;
-      font: inherit;
-      background: #fffaf4;
-      color: var(--text);
-    }
-
-    textarea { min-height: 96px; resize: vertical; }
-
-    .result {
-      margin-top: 16px;
-      padding: 18px;
-      background: #f8efe5;
-      border-radius: 18px;
-      border: 1px dashed var(--accent2);
-    }
-
-    .price {
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 32px 16px 56px;
-    }
-
-    @media (max-width: 860px) {
-      .grid.three, .grid.two { grid-template-columns: 1fr; }
-      header { padding-top: 40px; }
-      .screen { min-height: auto; }
-    }
-  </style>
+  <title>Threads 曝光與 AI 彩妝服務提案 Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="badge">Threads 曝光 × AI 彩妝 × 演唱會妝容提案</div>
-    <h1>讓專頁不只發作品，而是變成會被記住的美感顧問</h1>
-    <p class="subtitle">
-      以 Threads 建立人格與專業信任，再用 AI 互動診斷、演唱會妝容服務與教學，導流到預約與課程。
-    </p>
-    <div class="cta-row">
-      <a class="btn" href="#ai-demo">試看 AI 服務 Demo</a>
-      <a class="btn secondary" href="#plan">查看 30 篇起步策略</a>
+  <header class="hero">
+    <div class="tag">Threads 經營 × AI 彩妝 × 演唱會妝容</div>
+    <h1>讓美甲彩妝專頁，從作品展示變成客源入口</h1>
+    <p>以 Threads 建立個人魅力與專業信任，再透過 AI 彩妝診斷、演唱會妝容設計與教學服務，增加互動、私訊與預約。</p>
+    <div class="buttons">
+      <a href="#demo" class="btn">試看 AI Demo</a>
+      <a href="#strategy" class="btn ghost">查看經營策略</a>
     </div>
   </header>
 
   <main>
-    <section class="grid three">
-      <div class="card">
-        <span class="number">1</span>
-        <h3>第一步：先做人設</h3>
-        <p class="muted">Threads 不是作品集，而是讓人認識「這位老師很懂我」。</p>
-        <div class="pill-list">
-          <span class="pill">日常觀察</span>
-          <span class="pill">客人煩惱</span>
-          <span class="pill">專業吐槽</span>
-        </div>
-      </div>
-      <div class="card">
-        <span class="number">2</span>
-        <h3>第二步：做互動服務</h3>
-        <p class="muted">用 AI 彩妝診斷、妝容模擬、五官分析，增加私訊率。</p>
-        <div class="pill-list">
-          <span class="pill">AI妝容建議</span>
-          <span class="pill">演唱會妝</span>
-          <span class="pill">快速變美</span>
-        </div>
-      </div>
-      <div class="card">
-        <span class="number">3</span>
-        <h3>第三步：導流預約</h3>
-        <p class="muted">把免費互動變成付費完整分析、妝容設計、妝髮教學。</p>
-        <div class="pill-list">
-          <span class="pill">一對一教學</span>
-          <span class="pill">活動妝髮</span>
-          <span class="pill">預約制</span>
-        </div>
-      </div>
+    <section class="cards">
+      <article><span>01</span><h2>Threads 先養人格</h2><p>IG 看作品，Threads 看人。第一階段先讓大家認識「這位老師很懂我」。</p></article>
+      <article><span>02</span><h2>AI 互動提高私訊</h2><p>用 AI 妝容分析、演唱會妝容建議、五官優勢診斷，讓粉絲主動留言與私訊。</p></article>
+      <article><span>03</span><h2>服務商品化</h2><p>把互動轉換成妝容設計、彩妝教學、美甲搭配與活動妝髮預約。</p></article>
     </section>
 
-    <section class="grid two">
-      <div class="card">
-        <h2>Threads 第一篇建議</h2>
-        <div class="mock-phone">
-          <div class="screen">
-            <div class="thread-header">
-              <div class="avatar"></div>
-              <div>
-                美甲彩妝顧問<br>
-                <span class="muted" style="font-size:13px;">@beauty.demo</span>
-              </div>
-            </div>
-            <div class="post">
-              <div class="handle">美甲彩妝顧問</div>
-              <p>我發現很多女生不是不會變漂亮。</p>
-              <p>是不知道自己適合什麼。</p>
-              <p>同一盤眼影，有人畫起來像韓星，有人畫起來像熬夜三天。</p>
-              <p>所以我接下來想用 Threads 分享：</p>
-              <p>✓ 不同眼型怎麼畫<br>✓ 演唱會妝容怎麼設計<br>✓ 上班族5分鐘有精神妝<br>✓ AI可以怎麼幫你找到適合自己的妝</p>
-              <p>先說，你最困擾的是眉毛、眼妝、底妝還是唇色？</p>
-              <div class="actions">♡ 126　💬 38　↗ 12</div>
-            </div>
-            <div class="post">
-              <div class="handle">留言互動方向</div>
-              <p>每個留言都可以回成小型診斷，例如：「你是眼妝卡住，我會先從眼線位置調整。」</p>
-              <div class="actions">目標：讓留言變私訊</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" id="plan">
-        <h2>前 30 篇主題配置</h2>
+    <section class="split" id="strategy">
+      <div class="panel">
+        <h2>前 30 篇內容規劃</h2>
         <div class="timeline">
-          <div class="timeline-item">
-            <h3>1–5 篇｜我是誰＋為什麼開始做 Threads</h3>
-            <p class="muted">建立親近感，不急著賣服務。</p>
-          </div>
-          <div class="timeline-item">
-            <h3>6–12 篇｜客人常見煩惱</h3>
-            <p class="muted">眉毛、眼型、底妝、顯老、拍照不上相。</p>
-          </div>
-          <div class="timeline-item">
-            <h3>13–18 篇｜AI 彩妝診斷</h3>
-            <p class="muted">免費留言互動＋私訊完整分析。</p>
-          </div>
-          <div class="timeline-item">
-            <h3>19–24 篇｜演唱會妝容系列</h3>
-            <p class="muted">FTISLAND、韓團、五月天、Energy、日系樂團。</p>
-          </div>
-          <div class="timeline-item">
-            <h3>25–30 篇｜服務轉換</h3>
-            <p class="muted">妝容設計、妝髮教學、美甲搭配、活動預約。</p>
+          <div><b>1–5 篇｜我是誰</b><p>美甲彩妝師日常、審美觀、為什麼開始做 Threads。</p></div>
+          <div><b>6–12 篇｜客人常見煩惱</b><p>眉毛不對稱、眼妝顯髒、底妝不持久、拍照不上相。</p></div>
+          <div><b>13–18 篇｜AI 彩妝診斷</b><p>留言互動：「你最困擾哪裡？」導流完整分析。</p></div>
+          <div><b>19–24 篇｜演唱會妝容</b><p>FTISLAND、韓團、五月天、Energy、日系樂團應援妝。</p></div>
+          <div><b>25–30 篇｜服務轉換</b><p>妝容設計、妝髮教學、美甲搭配、活動預約。</p></div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="profile"><div class="avatar"></div><div><b>美甲彩妝顧問</b><br><small>@beauty.demo</small></div></div>
+          <div class="post">
+            <b>第一篇 Threads 範例</b>
+            <p>我發現很多女生不是不會變漂亮。</p>
+            <p>是不知道自己適合什麼。</p>
+            <p>同一盤眼影，有人畫起來像韓星，有人畫起來像熬夜三天。</p>
+            <p>接下來我會分享：眼型妝容、演唱會妝、5分鐘上班妝，以及 AI 怎麼幫你找到適合自己的妝。</p>
+            <p>你最困擾的是眉毛、眼妝、底妝還是唇色？</p>
+            <small>♡ 126　💬 38　↗ 12</small>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="grid two" id="ai-demo">
-      <div class="card">
+    <section class="split" id="demo">
+      <div class="panel">
         <h2>AI 彩妝推薦 Demo</h2>
-        <p class="muted">提案時可展示「客人輸入需求 → 產生妝容方向 → 導流完整服務」。</p>
+        <p class="muted">提案時可展示：客人輸入需求 → 產生妝容方向 → 導流完整服務。</p>
 
-        <div class="demo-box">
-          <label for="occasion">場合</label>
+        <div class="form-box">
+          <label>場合</label>
           <select id="occasion">
             <option value="concert">演唱會</option>
             <option value="work">上班日常</option>
@@ -414,7 +66,7 @@
             <option value="wedding">婚宴賓客</option>
           </select>
 
-          <label for="style">想要風格</label>
+          <label>想要風格</label>
           <select id="style">
             <option value="korean">韓系乾淨感</option>
             <option value="japanese">日系低飽和</option>
@@ -422,7 +74,7 @@
             <option value="gentle">溫柔氣質感</option>
           </select>
 
-          <label for="concern">最困擾的地方</label>
+          <label>最困擾的地方</label>
           <select id="concern">
             <option value="eyes">眼睛泡／眼妝不明顯</option>
             <option value="brow">眉毛不對稱</option>
@@ -430,126 +82,32 @@
             <option value="color">不知道適合什麼顏色</option>
           </select>
 
-          <button class="btn" style="margin-top:16px;width:100%;" onclick="generateResult()">產生妝容建議</button>
-
-          <div class="result" id="result">
-            選擇條件後，點擊按鈕產生示範結果。
-          </div>
+          <button onclick="generateResult()">產生妝容建議</button>
+          <div id="result" class="result">選擇條件後，點擊按鈕產生示範結果。</div>
         </div>
       </div>
 
-      <div class="card">
-        <h2>可以包裝成哪些服務？</h2>
-        <div class="grid">
-          <div class="demo-box">
-            <h3>AI 快速妝容診斷</h3>
-            <p class="muted">免費或低價引流，適合 Threads 私訊互動。</p>
-            <div class="price">NT$ 0–299</div>
-          </div>
-          <div class="demo-box">
-            <h3>演唱會妝容設計</h3>
-            <p class="muted">依藝人、座位、應援色、穿搭規劃妝髮。</p>
-            <div class="price">NT$ 699 起</div>
-          </div>
-          <div class="demo-box">
-            <h3>一對一妝容教學</h3>
-            <p class="muted">帶著自己的彩妝品來，學會適合自己的日常妝。</p>
-            <div class="price">NT$ 1,200 起</div>
-          </div>
-        </div>
+      <div class="panel">
+        <h2>可商品化服務</h2>
+        <div class="service"><b>AI 快速妝容診斷</b><p>免費或低價引流，適合 Threads 私訊互動。</p><strong>NT$ 0–299</strong></div>
+        <div class="service"><b>演唱會妝容設計</b><p>依藝人、座位、應援色、穿搭規劃妝髮。</p><strong>NT$ 699 起</strong></div>
+        <div class="service"><b>一對一妝容教學</b><p>帶著自己的彩妝品來，學會適合自己的日常妝。</p><strong>NT$ 1,200 起</strong></div>
       </div>
     </section>
 
-    <section class="grid three">
-      <div class="card">
-        <h2>演唱會妝容服務</h2>
-        <p>不只化妝，而是幫粉絲做「當天造型企劃」。</p>
-        <div class="pill-list">
-          <span class="pill">應援色搭配</span>
-          <span class="pill">拍照顯色</span>
-          <span class="pill">不易脫妝</span>
-          <span class="pill">髮型建議</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>美甲＋妝容搭配</h2>
-        <p>美甲可以從單次作品變成整體造型的一部分，提高客單價。</p>
-        <div class="pill-list">
-          <span class="pill">穿搭色系</span>
-          <span class="pill">偶像主題</span>
-          <span class="pill">約會造型</span>
-          <span class="pill">婚宴賓客</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>長照研究室互惠</h2>
-        <p>主題可走「照顧別人之前，也要照顧自己」。</p>
-        <div class="pill-list">
-          <span class="pill">長照人上班妝</span>
-          <span class="pill">照顧者放鬆日</span>
-          <span class="pill">媽媽妝教學</span>
-          <span class="pill">5分鐘有精神</span>
-        </div>
-      </div>
+    <section class="cards">
+      <article><h2>演唱會妝容服務</h2><p>不只化妝，而是幫粉絲做「當天造型企劃」：應援色、拍照顯色、不易脫妝、髮型搭配。</p></article>
+      <article><h2>美甲＋妝容搭配</h2><p>讓美甲從單次作品變成整體造型，提高客單價，也更容易被分享。</p></article>
+      <article><h2>長照研究室互惠</h2><p>主題可走「照顧別人之前，也要照顧自己」：長照人上班妝、照顧者放鬆日、媽媽妝教學。</p></article>
     </section>
 
-    <section class="card">
+    <section class="conclusion">
       <h2>提案結論</h2>
-      <p>
-        這個專頁在 Threads 的切入點不是「我會化妝／我會做美甲」，而是
-        <strong>「我懂你為什麼卡住，也能用簡單方式幫你變好看」。</strong>
-      </p>
-      <p class="muted">
-        建議先用 30 篇內容測試互動，再依留言與私訊量調整服務品項，最快可以從 AI 診斷、演唱會妝容、日常妝教學三個方向開始。
-      </p>
+      <p>這個專頁在 Threads 的切入點不是「我會化妝／我會做美甲」，而是「我懂你為什麼卡住，也能用簡單方式幫你變好看」。</p>
     </section>
   </main>
 
-  <footer>
-    Demo for proposal use｜Threads 增加曝光與客源成長企劃
-  </footer>
-
-  <script>
-    function generateResult() {
-      const occasion = document.getElementById('occasion').value;
-      const style = document.getElementById('style').value;
-      const concern = document.getElementById('concern').value;
-
-      const occasionText = {
-        concert: '演唱會妝容',
-        work: '上班日常妝',
-        date: '約會拍照妝',
-        wedding: '婚宴賓客妝'
-      };
-
-      const styleText = {
-        korean: '韓系乾淨感',
-        japanese: '日系低飽和',
-        cool: '酷甜舞台感',
-        gentle: '溫柔氣質感'
-      };
-
-      const concernAdvice = {
-        eyes: '眼妝建議以「縮短眼影範圍、加強睫毛存在感」為主，避免大面積深色讓眼皮更泡。',
-        brow: '眉型建議先修出下緣線條，再用眉粉補空洞，眉峰不要太銳利，整體會更自然。',
-        base: '底妝建議採局部遮瑕＋薄粉底，T字定妝加強，避免全臉厚粉造成斑駁。',
-        color: '色彩建議先避開高飽和螢光色，可從奶茶、玫瑰棕、豆沙色開始測試。'
-      };
-
-      const addOn = {
-        concert: '加值建議：可搭配應援色眼線、亮片點綴與抗汗定妝。',
-        work: '加值建議：可做 5 分鐘快速上班妝教學，讓客人每天都用得到。',
-        date: '加值建議：可加入拍照角度、唇色與腮紅位置建議。',
-        wedding: '加值建議：可搭配服裝色系，避免搶新娘但保有氣色。'
-      };
-
-      document.getElementById('result').innerHTML = `
-        <strong>推薦方向：</strong>${occasionText[occasion]} × ${styleText[style]}<br><br>
-        <strong>妝容重點：</strong>${concernAdvice[concern]}<br><br>
-        <strong>服務導流：</strong>${addOn[occasion]}<br><br>
-        <span class="muted">CTA 範例：想看完整臉型／眼型／色系分析，可以私訊「AI診斷」。</span>
-      `;
-    }
-  </script>
+  <footer>Threads Beauty AI Demo｜可直接部署至 GitHub Pages</footer>
+  <script src="script.js"></script>
 </body>
 </html>
