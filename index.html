@@ -1,60 +1,234 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SF BEAUTY MVP</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SF BEAUTY Proposal MVP V3</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="hero">
-<h1>Discover Your Beauty</h1>
-<p>SF BEAUTY｜AI Beauty Hub × Threads Growth System</p>
-</header>
+  <header class="site-header">
+    <div class="logo">SF BEAUTY</div>
+    <nav class="nav">
+      <a href="#pain">Pain Point</a>
+      <a href="#ai">AI Hub</a>
+      <a href="#threads">Threads</a>
+      <a href="#shop">Shop</a>
+      <a href="#book">Book Now</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </header>
 
-<section class="card">
-<h2>AI Skin Analysis</h2>
-<select id="skin">
-<option>缺水</option>
-<option>泛紅</option>
-<option>暗沉</option>
-<option>毛孔</option>
-</select>
-<button onclick="analyze()">開始分析</button>
-<div id="result"></div>
-</section>
+  <main>
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Proposal MVP V3</p>
+        <h1>Discover Your Beauty</h1>
+        <p class="hero-text">用 AI 檢測、社群內容與美業服務流程，打造一個可以展示、互動、導流與轉換的品牌 MVP。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#ai">Start AI Beauty Hub</a>
+          <a class="btn ghost" href="#book">Book Now</a>
+        </div>
+      </div>
+      <div class="image-box large">[待放品牌形象圖]</div>
+    </section>
 
-<section class="card">
-<h2>Threads Growth Dashboard</h2>
-<ul>
-<li>美學觀察室</li>
-<li>保養不踩雷</li>
-<li>AI美學診斷</li>
-<li>上班族變漂亮計畫</li>
-<li>特殊場合變漂亮計畫</li>
-<li>案例分享</li>
-</ul>
-</section>
+    <section id="pain" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Brand Pain Points</p>
+        <h2>品牌痛點區</h2>
+      </div>
+      <div class="cards three">
+        <article class="card">
+          <span class="tag">痛點 01</span>
+          <h3>內容有曝光，但難轉換</h3>
+          <p>社群流量分散，粉絲看完貼文後沒有明確下一步，容易停留在按讚與收藏。</p>
+        </article>
+        <article class="card">
+          <span class="tag">痛點 02</span>
+          <h3>服務項目需要被理解</h3>
+          <p>霧眉、美睫、臉部檢測等服務需要視覺化說明，讓顧客快速知道自己適合什麼。</p>
+        </article>
+        <article class="card">
+          <span class="tag">痛點 03</span>
+          <h3>預約與商品導購未整合</h3>
+          <p>顧客可能想先買保養品，也可能想直接預約，網站需要同時承接兩種行為。</p>
+        </article>
+      </div>
+    </section>
 
-<section class="card">
-<h2>Beauty Shop</h2>
-<div class="grid">
-<div class="item">保濕精華</div>
-<div class="item">防曬</div>
-<div class="item">修復乳液</div>
-</div>
-</section>
+    <section id="ai" class="section split">
+      <div>
+        <p class="eyebrow">AI Beauty Hub</p>
+        <h2>AI Beauty Hub</h2>
+        <p>模擬 AI 美感檢測流程，讓顧客先選擇需求，再得到對應建議與導購／預約行動。</p>
+        <div class="ai-panel">
+          <label for="beautyNeed">選擇想改善的重點</label>
+          <select id="beautyNeed">
+            <option value="brow">眉型與五官比例</option>
+            <option value="lash">睫毛濃密與眼神感</option>
+            <option value="skin">膚況與保養建議</option>
+          </select>
+          <button class="btn primary" id="aiBtn">生成 AI 建議</button>
+          <div class="result" id="aiResult">請選擇需求，產生專屬建議。</div>
+        </div>
+      </div>
+      <div class="image-stack">
+        <div class="image-box">[待放檢測圖]</div>
+        <div class="image-box">[待放成品圖]</div>
+      </div>
+    </section>
 
-<section class="card">
-<h2>Book Now</h2>
-<p>彩妝教學｜保養品健檢｜色彩分析｜霧眉｜霧唇</p>
-</section>
+    <section id="threads" class="section dashboard-section">
+      <div class="section-title">
+        <p class="eyebrow">Threads Dashboard</p>
+        <h2>Threads Dashboard</h2>
+      </div>
+      <div class="dashboard-grid">
+        <div class="metric-card">
+          <span>貼文互動</span>
+          <strong>12.8K</strong>
+          <small>本月 +28%</small>
+        </div>
+        <div class="metric-card">
+          <span>導流點擊</span>
+          <strong>1,426</strong>
+          <small>預約頁 +19%</small>
+        </div>
+        <div class="metric-card">
+          <span>收藏率</span>
+          <strong>18%</strong>
+          <small>檢測內容最高</small>
+        </div>
+        <div class="metric-card">
+          <span>詢問轉換</span>
+          <strong>236</strong>
+          <small>私訊與表單</small>
+        </div>
+      </div>
 
-<section class="card">
-<h2>Revenue Model</h2>
-<p>Threads → 私訊 → AI分析 → 商品 → 服務 → 會員</p>
-</section>
+      <div class="threads-posts">
+        <article class="thread-card">
+          <div class="thread-user">@sfbeauty.tw</div>
+          <p>眉型不是越流行越好，是要讓五官看起來更順。今天用 AI 檢測幫你看適合哪種眉感。</p>
+          <div class="thread-actions">♡ 428　💬 36　↗ 52</div>
+        </article>
+        <article class="thread-card">
+          <div class="thread-user">@sfbeauty.tw</div>
+          <p>美睫前先看眼型，不是每個人都適合超濃密。自然、放大、乾淨感，才是日常耐看的關鍵。</p>
+          <div class="thread-actions">♡ 612　💬 58　↗ 81</div>
+        </article>
+        <article class="thread-card">
+          <div class="thread-user">@sfbeauty.tw</div>
+          <p>保養品不是買越多越好，先知道自己的膚況，再搭配最少但最有效的品項。</p>
+          <div class="thread-actions">♡ 389　💬 27　↗ 44</div>
+        </article>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section id="shop" class="section">
+      <div class="shop-header">
+        <div>
+          <p class="eyebrow">Beauty Shop</p>
+          <h2>Beauty Shop</h2>
+        </div>
+        <button class="cart-btn" id="cartBtn">購物車 <span id="cartDot">0</span></button>
+      </div>
+      <div class="cards three product-grid">
+        <article class="product-card">
+          <div class="image-box small">[待放成品圖]</div>
+          <h3>修護保養組</h3>
+          <p>術後與日常保養推薦。</p>
+          <strong>NT$ 1,280</strong>
+          <button class="btn primary addCart">加入購物車</button>
+        </article>
+        <article class="product-card">
+          <div class="image-box small">[待放品牌形象圖]</div>
+          <h3>亮眼美睫護理</h3>
+          <p>維持睫毛整齊與柔順。</p>
+          <strong>NT$ 880</strong>
+          <button class="btn primary addCart">加入購物車</button>
+        </article>
+        <article class="product-card">
+          <div class="image-box small">[待放檢測圖]</div>
+          <h3>肌膚檢測體驗</h3>
+          <p>搭配 AI Hub 服務建議。</p>
+          <strong>NT$ 599</strong>
+          <button class="btn primary addCart">加入購物車</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="book" class="section split booking-section">
+      <div>
+        <p class="eyebrow">Book Now</p>
+        <h2>假預約流程</h2>
+        <p>此區為展示用預約表單，送出後顯示罐頭確認訊息，不會真的建立訂單。</p>
+        <form id="bookingForm" class="booking-form">
+          <input type="text" id="name" placeholder="姓名" required />
+          <select id="service" required>
+            <option value="">選擇服務</option>
+            <option>AI 眉型檢測</option>
+            <option>自然感美睫</option>
+            <option>膚況檢測與保養建議</option>
+          </select>
+          <input type="date" id="date" required />
+          <button class="btn primary" type="submit">送出預約</button>
+        </form>
+        <div class="result" id="bookingResult">尚未送出預約。</div>
+      </div>
+      <div class="image-box large">[待放品牌形象圖]</div>
+    </section>
+
+    <section id="funnel" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Revenue Funnel</p>
+        <h2>Revenue Funnel</h2>
+      </div>
+      <div class="funnel">
+        <div><span>Threads 內容曝光</span><strong>100%</strong></div>
+        <div><span>AI Beauty Hub 互動</span><strong>42%</strong></div>
+        <div><span>商品加入購物車</span><strong>24%</strong></div>
+        <div><span>Book Now 預約</span><strong>12%</strong></div>
+        <div><span>服務成交與回購</span><strong>8%</strong></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Brand Roadmap</p>
+        <h2>Brand Roadmap</h2>
+      </div>
+      <div class="roadmap">
+        <article>
+          <span>Phase 01</span>
+          <h3>MVP 展示頁</h3>
+          <p>完成品牌介紹、AI Hub、Threads 模擬、Shop 與假預約流程。</p>
+        </article>
+        <article>
+          <span>Phase 02</span>
+          <h3>導入真實內容</h3>
+          <p>替換品牌形象圖、檢測圖、成品圖，加入真實案例與服務說明。</p>
+        </article>
+        <article>
+          <span>Phase 03</span>
+          <h3>串接轉換工具</h3>
+          <p>串接表單、LINE、金流、GA4 與社群追蹤，驗證轉換率。</p>
+        </article>
+        <article>
+          <span>Phase 04</span>
+          <h3>品牌成長系統</h3>
+          <p>建立內容模板、會員導購、回購機制與顧客分眾經營。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>SF BEAUTY</strong>
+    <p>Discover Your Beauty｜Proposal MVP V3</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
