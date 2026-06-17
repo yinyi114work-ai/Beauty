@@ -3,142 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SF BEAUTY Proposal Demo</title>
+  <title>SF BEAUTY Proposal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="aurora aurora-a"></div>
-  <div class="aurora aurora-b"></div>
-  <div class="aurora aurora-c"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
 
-  <header class="app-header">
+  <header class="top">
     <div class="brand">
-      <div class="logo">SF</div>
+      <div class="mark">SF</div>
       <div>
         <h1>SF BEAUTY Proposal</h1>
-        <p>AI × Threads 品牌成長提案 Demo</p>
+        <p>AI × Threads Growth Demo</p>
       </div>
     </div>
   </header>
 
   <nav class="tabs">
-    <button class="tab active" data-tab="position">Threads 定位</button>
+    <button class="tab active" data-tab="position">定位</button>
     <button class="tab" data-tab="series">系列文章</button>
-    <button class="tab" data-tab="ai">Threads × AI</button>
-    <button class="tab" data-tab="tools">AI 工具 Demo</button>
-    <button class="tab" data-tab="flow">變現流程</button>
+    <button class="tab" data-tab="ai">AI 引流</button>
+    <button class="tab" data-tab="tools">AI Demo</button>
+    <button class="tab" data-tab="flow">變現 Flow</button>
   </nav>
 
-  <main class="container">
+  <main class="wrap">
     <section id="position" class="panel active">
-      <section class="hero-card glass">
+      <section class="hero glass">
         <div class="hero-copy">
           <span class="tag">01｜Threads 經營定位</span>
-          <h2>Discover Your Beauty</h2>
+          <h2>Discover<br>Your Beauty</h2>
           <p class="lead">成為每位想變美的寶貝們，最信賴的美容品牌。</p>
-          <p>以專業美容師視角，結合 AI 輔助工具與詼諧有趣的分享方式，讓 SF BEAUTY 不只是服務帳號，而是大家變美路上的美容顧問。</p>
-          <div class="pill-group">
-            <span>專業美容師</span><span>高度信賴</span><span>AI 輔助</span><span>有趣有溫度</span>
-          </div>
+          <p class="desc">以專業美容師視角，結合 AI 輔助工具與輕鬆有趣的內容，讓 SF BEAUTY 不只是美容服務帳號，而是大家變美路上的美容顧問。</p>
+          <div class="keywords"><span>專業</span><span>信賴</span><span>AI 輔助</span><span>有溫度</span></div>
         </div>
-        <div class="concept-panel">
-          <div class="concept-photo">上傳照片</div>
-          <div class="concept-list">
+        <div class="concept glass-soft">
+          <div class="upload-preview">上傳照片</div>
+          <div class="mini-grid">
             <span>肌膚分析</span><span>彩妝風格</span><span>眉型建議</span><span>唇色建議</span>
           </div>
         </div>
       </section>
 
-      <section class="card glass">
-        <h3>為什麼是 Threads？</h3>
-        <p class="sub">提案重點不是做官網，而是把 Threads 包裝成建立專業、信賴與互動的品牌入口。</p>
+      <section class="glass block">
+        <div class="block-title">
+          <span class="tag">Why Threads?</span>
+          <h3>美容品牌的下一步，不只是展示作品</h3>
+          <p>提案重點不是做官網，而是把 Threads 包裝成建立專業、信賴與互動的品牌入口。</p>
+        </div>
+
         <div class="compare">
-          <div class="compare-box old">
-            <h4>一般美容帳號</h4>
-            <div class="route"><span>作品展示</span><i></i><span>按讚</span><i></i><span>離開</span></div>
-            <ul>
-              <li>以成品照與優惠活動為主</li>
-              <li>使用者看完後缺少下一步</li>
-              <li>品牌停留在服務提供者角色</li>
-            </ul>
-          </div>
-          <div class="compare-box new">
-            <h4>SF BEAUTY</h4>
-            <div class="route"><span>內容</span><i></i><span>信任</span><i></i><span>AI互動</span><i></i><span>諮詢</span><i></i><span>預約</span></div>
-            <ul>
-              <li>以專業內容建立信任感</li>
-              <li>用 AI 提升互動與個人化</li>
-              <li>讓流量自然轉往諮詢與服務</li>
-            </ul>
-          </div>
+          <article class="glass-soft compare-card">
+            <small>一般美容帳號</small>
+            <h4>作品展示導向</h4>
+            <div class="flow-line"><span>作品</span><i></i><span>按讚</span><i></i><span>離開</span></div>
+          </article>
+          <article class="glass-soft compare-card accent">
+            <small>SF BEAUTY</small>
+            <h4>美容顧問品牌導向</h4>
+            <div class="flow-line"><span>內容</span><i></i><span>信任</span><i></i><span>AI</span><i></i><span>諮詢</span></div>
+          </article>
         </div>
       </section>
 
-      <section class="grid four">
-        <article class="mini-card glass"><b>✨ 專業</b><p>以美容師角度分享保養、妝容、眉唇與美白知識。</p></article>
-        <article class="mini-card glass"><b>💗 信賴</b><p>讓使用者覺得這個帳號懂我、可以問、可以相信。</p></article>
-        <article class="mini-card glass"><b>🤖 AI</b><p>把個人化建議變簡單，提升內容互動性。</p></article>
-        <article class="mini-card glass"><b>🌿 溫度</b><p>用詼諧有趣、貼近生活的方式降低美容門檻。</p></article>
+      <section class="value-grid">
+        <article class="glass value"><b>Professional</b><h3>專業</h3><p>以美容師角度分享保養、妝容、眉唇與美白知識。</p></article>
+        <article class="glass value"><b>Trust</b><h3>信賴</h3><p>讓使用者覺得這個帳號懂我、可以問、可以相信。</p></article>
+        <article class="glass value"><b>AI Assisted</b><h3>AI</h3><p>把個人化建議變簡單，提升內容互動性。</p></article>
+        <article class="glass value"><b>Friendly</b><h3>溫度</h3><p>用詼諧有趣、貼近生活的方式降低美容門檻。</p></article>
       </section>
     </section>
 
     <section id="series" class="panel">
-      <section class="title-card glass">
+      <section class="glass intro">
         <span class="tag">02｜Threads 系列文章建議</span>
-        <h2>每個系列都要看得懂：目標、範文、變現環節</h2>
-        <p>這一頁讓客戶知道未來不是隨機發文，而是一套能累積專業、信任、互動與諮詢的內容策略。</p>
+        <h2>每個系列，都對應品牌成長與變現環節</h2>
+        <p>讓客戶清楚看到：未來不是隨機發文，而是一套能累積專業、信任、互動與諮詢的內容策略。</p>
       </section>
 
-      <section class="series-list">
-        <article class="series-card glass accent"><div class="series-icon">01</div><div class="no">系列一</div><h3>變美小教室</h3><div class="info"><b>目標：</b><p>建立專業度，讓 SF BEAUTY 成為使用者遇到美容疑問時會想參考的帳號。</p></div><div class="info"><b>範文：</b><ul><li>霧眉前一定要知道的 3 件事</li><li>保養品真的越貴越好嗎？</li><li>新手最常犯的保養錯誤</li></ul></div><div class="flow-chip">內容曝光 → 專業印象 → 信任累積</div></article>
-        <article class="series-card glass"><div class="series-icon">02</div><div class="no">系列二</div><h3>重要場合妝容指南</h3><div class="info"><b>目標：</b><p>抓住面試、簡報、婚禮、聚會等明確情境需求，提高收藏與搜尋曝光。</p></div><div class="info"><b>範文：</b><ul><li>面試妝容怎麼畫才專業？</li><li>簡報前快速提升氣色的妝容技巧</li><li>婚禮賓客妝容如何不失禮又好看？</li></ul></div><div class="flow-chip">搜尋需求 → 收藏 → 品牌曝光</div></article>
-        <article class="series-card glass"><div class="series-icon">03</div><div class="no">系列三</div><h3>演出與活動妝容企劃</h3><div class="info"><b>目標：</b><p>切入演唱會、音樂祭、戶外活動等高互動場景，增加分享與新粉絲觸及。</p></div><div class="info"><b>範文：</b><ul><li>活動妝容如何兼顧持妝與拍照？</li><li>戶外活動妝容必備技巧</li><li>拍照上鏡的小秘密：底妝、眼妝、唇色怎麼搭？</li></ul></div><div class="flow-chip">話題分享 → 新觸及 → 新粉絲</div></article>
-        <article class="series-card glass"><div class="series-icon">04</div><div class="no">系列四</div><h3>新手變美計畫</h3><div class="info"><b>目標：</b><p>吸引學生、新鮮人、化妝新手等大量潛在受眾，降低變美門檻。</p></div><div class="info"><b>範文：</b><ul><li>第一次化妝要準備什麼？</li><li>五分鐘快速日常妝</li><li>學生族群平價彩妝怎麼選？</li></ul></div><div class="flow-chip">流量入口 → 追蹤 → 長期培養</div></article>
-        <article class="series-card glass"><div class="series-icon">05</div><div class="no">系列五</div><h3>美容師偷偷說</h3><div class="info"><b>目標：</b><p>用真實觀點與生活化提醒建立信任感，讓品牌更像可靠的美容顧問。</p></div><div class="info"><b>範文：</b><ul><li>客人最常犯的保養錯誤</li><li>美容師最想提醒的一件事</li><li>不是流行就適合你，這件事很多人都誤會了</li></ul></div><div class="flow-chip">真實觀點 → 信任 → 諮詢</div></article>
-        <article class="series-card glass"><div class="series-icon">06</div><div class="no">系列六</div><h3>真實改變故事</h3><div class="info"><b>目標：</b><p>透過案例與心得降低猶豫感，讓使用者更容易想像自己完成服務後的改變。</p></div><div class="info"><b>範文：</b><ul><li>她為什麼決定做霧眉？</li><li>一次改變帶來的自信</li><li>從猶豫到喜歡自己的樣子：真實顧客心得</li></ul></div><div class="flow-chip">案例信心 → 服務想像 → 預約意願</div></article>
-        <article class="series-card glass accent"><div class="series-icon">AI</div><div class="no">系列七</div><h3>Beauty AI Lab</h3><div class="info"><b>目標：</b><p>建立 SF BEAUTY 與其他美容帳號的差異化，讓內容不只是觀看，而是能進一步互動。</p></div><div class="info"><b>範文：</b><ul><li>AI 幫你推薦適合的妝容</li><li>AI 肌膚分析體驗：你的保養重點是什麼？</li><li>AI 找出你的專屬眉型與唇色風格</li></ul></div><div class="flow-chip">內容 → AI互動 → LINE → 諮詢 → 預約</div></article>
+      <section class="series-grid">
+        <article class="series glass"><span>系列一</span><h3>變美小教室</h3><dl><dt>目標</dt><dd>建立專業度，成為美容知識來源。</dd><dt>範文</dt><dd>霧眉前一定要知道的 3 件事<br>保養品真的越貴越好嗎？</dd><dt>變現</dt><dd>內容 → 信任 → 諮詢</dd></dl></article>
+        <article class="series glass"><span>系列二</span><h3>重要場合妝容指南</h3><dl><dt>目標</dt><dd>抓住面試、簡報、婚禮等明確需求。</dd><dt>範文</dt><dd>面試妝容怎麼畫才專業？<br>簡報前快速提升氣色</dd><dt>變現</dt><dd>搜尋 → 收藏 → 品牌曝光</dd></dl></article>
+        <article class="series glass"><span>系列三</span><h3>演出與活動妝容企劃</h3><dl><dt>目標</dt><dd>增加分享與新粉絲觸及。</dd><dt>範文</dt><dd>活動妝容如何兼顧持妝與拍照？<br>戶外活動妝容必備技巧</dd><dt>變現</dt><dd>分享 → 觸及 → 新粉絲</dd></dl></article>
+        <article class="series glass"><span>系列四</span><h3>新手變美計畫</h3><dl><dt>目標</dt><dd>吸引學生、新鮮人、化妝新手。</dd><dt>範文</dt><dd>第一次化妝要準備什麼？<br>五分鐘快速日常妝</dd><dt>變現</dt><dd>流量 → 追蹤 → 長期培養</dd></dl></article>
+        <article class="series glass"><span>系列五</span><h3>美容師偷偷說</h3><dl><dt>目標</dt><dd>用真實觀點建立信任。</dd><dt>範文</dt><dd>客人最常犯的保養錯誤<br>美容師最想提醒的一件事</dd><dt>變現</dt><dd>真實觀點 → 信任 → 諮詢</dd></dl></article>
+        <article class="series glass"><span>系列六</span><h3>真實改變故事</h3><dl><dt>目標</dt><dd>用案例與心得降低猶豫感。</dd><dt>範文</dt><dd>她為什麼決定做霧眉？<br>一次改變帶來的自信</dd><dt>變現</dt><dd>案例信心 → 預約意願</dd></dl></article>
+        <article class="series glass wide"><span>系列七</span><h3>Beauty AI Lab</h3><dl><dt>目標</dt><dd>建立差異化，讓內容不只是觀看，而是能互動。</dd><dt>範文</dt><dd>AI 幫你推薦適合的妝容<br>AI 肌膚分析體驗：你的保養重點是什麼？</dd><dt>變現</dt><dd>內容 → AI互動 → LINE → 諮詢 → 預約</dd></dl></article>
       </section>
     </section>
 
     <section id="ai" class="panel">
-      <section class="title-card glass"><span class="tag">03｜Threads 結合 AI 小工具</span><h2>讓內容變成可轉換的入口</h2><p>AI 小工具在提案中的角色，是讓使用者從「看內容」進一步變成「留下需求」與「進入諮詢」。</p></section>
-      <section class="flow-board glass"><div>Threads內容</div><i></i><div>AI Beauty Hub</div><i></i><div>個人化建議</div><i></i><div>官方LINE</div><i></i><div>專業諮詢</div><i></i><div>預約服務</div></section>
-      <section class="grid three"><article class="mini-card glass"><b>降低諮詢門檻</b><p>使用者不一定知道怎麼問美容師，AI 先幫他整理需求。</p></article><article class="mini-card glass"><b>提高互動率</b><p>從看貼文變成點擊體驗，增加停留與記憶點。</p></article><article class="mini-card glass"><b>創造名單</b><p>將有意願的使用者導向 LINE，讓品牌可以後續經營。</p></article></section>
+      <section class="glass intro">
+        <span class="tag">03｜Threads × AI</span>
+        <h2>讓內容變成可轉換的入口</h2>
+        <p>AI 小工具讓使用者從「看內容」進一步變成「留下需求」與「進入諮詢」。</p>
+      </section>
+      <section class="journey glass">
+        <div>Threads<br><small>內容曝光</small></div><i></i>
+        <div>AI Hub<br><small>互動體驗</small></div><i></i>
+        <div>Report<br><small>個人化建議</small></div><i></i>
+        <div>LINE<br><small>名單沉澱</small></div><i></i>
+        <div>Consult<br><small>專業諮詢</small></div><i></i>
+        <div>Booking<br><small>預約服務</small></div>
+      </section>
     </section>
 
     <section id="tools" class="panel">
-      <section class="demo-card glass">
-        <div class="demo-header">
+      <section class="glass ai-report">
+        <div class="report-head">
           <span class="tag">04｜AI Beauty Hub Demo</span>
-          <h2>上傳照片後，進行各項美容分析</h2>
-          <p>此區為提案示意：使用者上傳人臉照片後，下方呈現針對該照片產出的分析結果。</p>
+          <h2>AI Beauty Report</h2>
+          <p>上傳照片後，產出肌膚、彩妝、眉型、唇色與情境妝容分析。</p>
         </div>
 
-        <div class="photo-upload">上傳照片</div>
+        <div class="photo-box">上傳照片</div>
 
-        <div class="result-grid">
-          <article><h3>肌膚檢測</h3><div class="metric"><span>油肌</span><b>85%</b></div><div class="bar"><i style="width:85%"></i></div><div class="metric"><span>乾燥肌</span><b>10%</b></div><div class="bar"><i style="width:10%"></i></div><div class="metric"><span>敏感肌</span><b>5%</b></div><div class="bar"><i style="width:5%"></i></div><p><b>保養建議：</b>以清爽保濕、控油與穩定膚況為主，避免過度清潔。</p></article>
-          <article><h3>彩妝風格</h3><div class="metric"><span>黃皮</span><b>5%</b></div><div class="bar"><i style="width:5%"></i></div><div class="metric"><span>中性膚</span><b>75%</b></div><div class="bar"><i style="width:75%"></i></div><div class="metric"><span>冷白皮</span><b>20%</b></div><div class="bar"><i style="width:20%"></i></div><p><b>彩妝建議：</b>適合清透底妝、玫瑰豆沙唇色與柔和大地眼妝。</p></article>
-          <article><h3>眉型分析</h3><div class="metric"><span>自然平彎眉</span><b>78%</b></div><div class="bar"><i style="width:78%"></i></div><div class="metric"><span>柔和眉峰</span><b>15%</b></div><div class="bar"><i style="width:15%"></i></div><div class="metric"><span>英氣眉</span><b>7%</b></div><div class="bar"><i style="width:7%"></i></div><p><b>眉型建議：</b>保留自然眉流，眉峰不要太銳利，讓整體更溫柔。</p></article>
-          <article><h3>唇色建議</h3><div class="metric"><span>玫瑰豆沙</span><b>62%</b></div><div class="bar"><i style="width:62%"></i></div><div class="metric"><span>奶茶粉</span><b>28%</b></div><div class="bar"><i style="width:28%"></i></div><div class="metric"><span>珊瑚色</span><b>10%</b></div><div class="bar"><i style="width:10%"></i></div><p><b>唇色建議：</b>以提升氣色、不過度搶眼的色系為主，適合日常與上班。</p></article>
-          <article><h3>牙齒美白</h3><div class="metric"><span>明亮度提升</span><b>71%</b></div><div class="bar"><i style="width:71%"></i></div><div class="metric"><span>敏感風險</span><b>18%</b></div><div class="bar"><i style="width:18%"></i></div><div class="metric"><span>重要場合需求</span><b>86%</b></div><div class="bar"><i style="width:86%"></i></div><p><b>美白建議：</b>先評估色階與敏感程度，再安排適合的美白頻率。</p></article>
-          <article><h3>活動妝容</h3><div class="metric"><span>持妝需求</span><b>91%</b></div><div class="bar"><i style="width:91%"></i></div><div class="metric"><span>拍照亮點</span><b>84%</b></div><div class="bar"><i style="width:84%"></i></div><div class="metric"><span>舒適度</span><b>72%</b></div><div class="bar"><i style="width:72%"></i></div><p><b>妝容建議：</b>持妝底妝、眼妝亮點與完整唇色，適合演唱會與活動拍照。</p></article>
+        <div class="report-grid">
+          <article><h3>肌膚檢測</h3><div class="metric"><span>油肌</span><b>85%</b></div><div class="bar"><i style="width:85%"></i></div><div class="metric"><span>乾燥肌</span><b>10%</b></div><div class="bar"><i style="width:10%"></i></div><div class="metric"><span>敏感肌</span><b>5%</b></div><div class="bar"><i style="width:5%"></i></div><p>保養建議：清爽保濕、控油與穩定膚況，避免過度清潔。</p></article>
+          <article><h3>彩妝風格</h3><div class="metric"><span>黃皮</span><b>5%</b></div><div class="bar"><i style="width:5%"></i></div><div class="metric"><span>中性膚</span><b>75%</b></div><div class="bar"><i style="width:75%"></i></div><div class="metric"><span>冷白皮</span><b>20%</b></div><div class="bar"><i style="width:20%"></i></div><p>彩妝建議：清透底妝、玫瑰豆沙唇色與柔和大地眼妝。</p></article>
+          <article><h3>眉型分析</h3><div class="metric"><span>自然平彎眉</span><b>78%</b></div><div class="bar"><i style="width:78%"></i></div><div class="metric"><span>柔和眉峰</span><b>15%</b></div><div class="bar"><i style="width:15%"></i></div><div class="metric"><span>英氣眉</span><b>7%</b></div><div class="bar"><i style="width:7%"></i></div><p>眉型建議：保留自然眉流，眉峰不要太銳利。</p></article>
+          <article><h3>唇色建議</h3><div class="metric"><span>玫瑰豆沙</span><b>62%</b></div><div class="bar"><i style="width:62%"></i></div><div class="metric"><span>奶茶粉</span><b>28%</b></div><div class="bar"><i style="width:28%"></i></div><div class="metric"><span>珊瑚色</span><b>10%</b></div><div class="bar"><i style="width:10%"></i></div><p>唇色建議：提升氣色、不過度搶眼，適合日常與上班。</p></article>
+          <article><h3>牙齒美白</h3><div class="metric"><span>明亮度提升</span><b>71%</b></div><div class="bar"><i style="width:71%"></i></div><div class="metric"><span>敏感風險</span><b>18%</b></div><div class="bar"><i style="width:18%"></i></div><div class="metric"><span>重要場合需求</span><b>86%</b></div><div class="bar"><i style="width:86%"></i></div><p>美白建議：先評估色階與敏感程度，再安排適合頻率。</p></article>
+          <article><h3>活動妝容</h3><div class="metric"><span>持妝需求</span><b>91%</b></div><div class="bar"><i style="width:91%"></i></div><div class="metric"><span>拍照亮點</span><b>84%</b></div><div class="bar"><i style="width:84%"></i></div><div class="metric"><span>舒適度</span><b>72%</b></div><div class="bar"><i style="width:72%"></i></div><p>妝容建議：持妝底妝、眼妝亮點與完整唇色。</p></article>
         </div>
-
-        <div class="demo-note">分析結果僅供參考，實際建議由美容師提供</div>
+        <p class="note">分析結果僅供參考，實際建議由美容師提供。</p>
       </section>
     </section>
 
     <section id="flow" class="panel">
-      <section class="title-card glass"><span class="tag">05｜變現模式 Flow Chart</span><h2>內容建立信任，AI 放大互動，諮詢完成轉換</h2><p>透過信任累積與互動設計，把陌生使用者轉成願意諮詢與預約的潛在顧客。</p></section>
-      <section class="revenue glass"><div><span>01</span><b>內容</b><p>Threads 系列文章吸引曝光。</p></div><i></i><div><span>02</span><b>信任</b><p>專業、有溫度的內容建立追蹤理由。</p></div><i></i><div><span>03</span><b>AI互動</b><p>使用者獲得個人化建議。</p></div><i></i><div><span>04</span><b>LINE名單</b><p>高意願使用者進入官方 LINE。</p></div><i></i><div><span>05</span><b>專業諮詢</b><p>美容師承接需求。</p></div><i></i><div><span>06</span><b>預約成交</b><p>轉換為霧眉、霧唇、美睫、美白、彩妝等服務。</p></div><i></i><div><span>07</span><b>會員回購</b><p>透過回訪、會員活動與主題內容提升回購。</p></div></section>
+      <section class="glass intro">
+        <span class="tag">05｜Revenue Flow</span>
+        <h2>內容建立信任，AI 放大互動，諮詢完成轉換</h2>
+      </section>
+      <section class="flow glass">
+        <div><b>Threads</b><small>內容</small></div><i></i>
+        <div><b>Trust</b><small>信任</small></div><i></i>
+        <div><b>AI Hub</b><small>互動</small></div><i></i>
+        <div><b>LINE</b><small>名單</small></div><i></i>
+        <div><b>Consult</b><small>諮詢</small></div><i></i>
+        <div><b>Booking</b><small>預約</small></div><i></i>
+        <div><b>Member</b><small>回購</small></div>
+      </section>
     </section>
   </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
