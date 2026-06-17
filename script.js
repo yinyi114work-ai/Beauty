@@ -1,41 +1,45 @@
-const aiBtn = document.getElementById('aiBtn');
-const aiResult = document.getElementById('aiResult');
-const beautyNeed = document.getElementById('beautyNeed');
-const addCartButtons = document.querySelectorAll('.addCart');
-const cartDot = document.getElementById('cartDot');
-const bookingForm = document.getElementById('bookingForm');
-const bookingResult = document.getElementById('bookingResult');
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+navToggle?.addEventListener('click', () => nav.classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
 
-let cartCount = 0;
-
-const aiMessages = {
-  brow: 'AI 建議：你的重點可以放在眉峰位置與眉尾收斂，建議預約 AI 眉型檢測，搭配自然霧眉成品圖作為溝通參考。',
-  lash: 'AI 建議：你的眼神優勢適合自然放大感美睫，不建議過度濃密。可先看成品圖，再選擇日常款或微華麗款。',
-  skin: 'AI 建議：先做膚況檢測，確認乾燥、暗沉或敏感重點，再搭配基礎修護保養組，避免一次購買過多品項。'
+const adviceMap = {
+  brow: '建議從眉型比例開始，選擇柔霧自然感，讓五官更集中、妝感更乾淨。',
+  lash: '建議選擇自然放大款，保留眼神清透度，讓日常妝容更精緻但不厚重。',
+  skin: '建議先完成膚況檢測，再搭配保濕修護與簡化保養，降低盲買商品的機率。'
 };
+let selectedAdvice = 'brow';
 
-aiBtn.addEventListener('click', () => {
-  const selected = beautyNeed.value;
-  aiResult.textContent = aiMessages[selected] || '請選擇需求，產生專屬建議。';
-});
-
-addCartButtons.forEach((button) => {
+document.querySelectorAll('.choice').forEach(button => {
   button.addEventListener('click', () => {
-    cartCount += 1;
-    cartDot.textContent = cartCount;
-    button.textContent = '已加入購物車';
-    setTimeout(() => {
-      button.textContent = '加入購物車';
-    }, 900);
+    document.querySelectorAll('.choice').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    selectedAdvice = button.dataset.result;
   });
 });
 
-bookingForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const service = document.getElementById('service').value;
-  const date = document.getElementById('date').value;
+document.getElementById('generateAdvice')?.addEventListener('click', () => {
+  const result = document.getElementById('aiResult');
+  result.textContent = adviceMap[selectedAdvice];
+  result.animate([{ transform: 'translateY(6px)', opacity: .6 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 260, easing: 'ease-out' });
+});
 
-  bookingResult.textContent = `${name || '顧客'}您好，已收到您的「${service}」假預約需求，預約日期為 ${date}。這是 MVP 展示用罐頭訊息，尚未真的送出預約。`;
-  bookingForm.reset();
+let cartCount = 0;
+document.querySelectorAll('.add-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    cartCount += 1;
+    const badge = document.getElementById('cartBadge');
+    badge.textContent = cartCount;
+    badge.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.35)' }, { transform: 'scale(1)' }], { duration: 300 });
+  });
+});
+
+document.getElementById('bookingForm')?.addEventListener('submit', event => {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const name = form.get('name') || '顧客';
+  const service = form.get('service');
+  const date = form.get('date');
+  document.getElementById('bookingMessage').textContent = `${name}，已收到你的 ${service} 假預約｜日期：${date}。`;
+  event.currentTarget.reset();
 });
