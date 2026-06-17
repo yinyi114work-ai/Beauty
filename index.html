@@ -1,113 +1,60 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Threads 曝光與 AI 彩妝服務提案 Demo</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SF BEAUTY MVP</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="tag">Threads 經營 × AI 彩妝 × 演唱會妝容</div>
-    <h1>讓美甲彩妝專頁，從作品展示變成客源入口</h1>
-    <p>以 Threads 建立個人魅力與專業信任，再透過 AI 彩妝診斷、演唱會妝容設計與教學服務，增加互動、私訊與預約。</p>
-    <div class="buttons">
-      <a href="#demo" class="btn">試看 AI Demo</a>
-      <a href="#strategy" class="btn ghost">查看經營策略</a>
-    </div>
-  </header>
+<header class="hero">
+<h1>Discover Your Beauty</h1>
+<p>SF BEAUTY｜AI Beauty Hub × Threads Growth System</p>
+</header>
 
-  <main>
-    <section class="cards">
-      <article><span>01</span><h2>Threads 先養人格</h2><p>IG 看作品，Threads 看人。第一階段先讓大家認識「這位老師很懂我」。</p></article>
-      <article><span>02</span><h2>AI 互動提高私訊</h2><p>用 AI 妝容分析、演唱會妝容建議、五官優勢診斷，讓粉絲主動留言與私訊。</p></article>
-      <article><span>03</span><h2>服務商品化</h2><p>把互動轉換成妝容設計、彩妝教學、美甲搭配與活動妝髮預約。</p></article>
-    </section>
+<section class="card">
+<h2>AI Skin Analysis</h2>
+<select id="skin">
+<option>缺水</option>
+<option>泛紅</option>
+<option>暗沉</option>
+<option>毛孔</option>
+</select>
+<button onclick="analyze()">開始分析</button>
+<div id="result"></div>
+</section>
 
-    <section class="split" id="strategy">
-      <div class="panel">
-        <h2>前 30 篇內容規劃</h2>
-        <div class="timeline">
-          <div><b>1–5 篇｜我是誰</b><p>美甲彩妝師日常、審美觀、為什麼開始做 Threads。</p></div>
-          <div><b>6–12 篇｜客人常見煩惱</b><p>眉毛不對稱、眼妝顯髒、底妝不持久、拍照不上相。</p></div>
-          <div><b>13–18 篇｜AI 彩妝診斷</b><p>留言互動：「你最困擾哪裡？」導流完整分析。</p></div>
-          <div><b>19–24 篇｜演唱會妝容</b><p>FTISLAND、韓團、五月天、Energy、日系樂團應援妝。</p></div>
-          <div><b>25–30 篇｜服務轉換</b><p>妝容設計、妝髮教學、美甲搭配、活動預約。</p></div>
-        </div>
-      </div>
+<section class="card">
+<h2>Threads Growth Dashboard</h2>
+<ul>
+<li>美學觀察室</li>
+<li>保養不踩雷</li>
+<li>AI美學診斷</li>
+<li>上班族變漂亮計畫</li>
+<li>特殊場合變漂亮計畫</li>
+<li>案例分享</li>
+</ul>
+</section>
 
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="profile"><div class="avatar"></div><div><b>美甲彩妝顧問</b><br><small>@beauty.demo</small></div></div>
-          <div class="post">
-            <b>第一篇 Threads 範例</b>
-            <p>我發現很多女生不是不會變漂亮。</p>
-            <p>是不知道自己適合什麼。</p>
-            <p>同一盤眼影，有人畫起來像韓星，有人畫起來像熬夜三天。</p>
-            <p>接下來我會分享：眼型妝容、演唱會妝、5分鐘上班妝，以及 AI 怎麼幫你找到適合自己的妝。</p>
-            <p>你最困擾的是眉毛、眼妝、底妝還是唇色？</p>
-            <small>♡ 126　💬 38　↗ 12</small>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="card">
+<h2>Beauty Shop</h2>
+<div class="grid">
+<div class="item">保濕精華</div>
+<div class="item">防曬</div>
+<div class="item">修復乳液</div>
+</div>
+</section>
 
-    <section class="split" id="demo">
-      <div class="panel">
-        <h2>AI 彩妝推薦 Demo</h2>
-        <p class="muted">提案時可展示：客人輸入需求 → 產生妝容方向 → 導流完整服務。</p>
+<section class="card">
+<h2>Book Now</h2>
+<p>彩妝教學｜保養品健檢｜色彩分析｜霧眉｜霧唇</p>
+</section>
 
-        <div class="form-box">
-          <label>場合</label>
-          <select id="occasion">
-            <option value="concert">演唱會</option>
-            <option value="work">上班日常</option>
-            <option value="date">約會拍照</option>
-            <option value="wedding">婚宴賓客</option>
-          </select>
+<section class="card">
+<h2>Revenue Model</h2>
+<p>Threads → 私訊 → AI分析 → 商品 → 服務 → 會員</p>
+</section>
 
-          <label>想要風格</label>
-          <select id="style">
-            <option value="korean">韓系乾淨感</option>
-            <option value="japanese">日系低飽和</option>
-            <option value="cool">酷甜舞台感</option>
-            <option value="gentle">溫柔氣質感</option>
-          </select>
-
-          <label>最困擾的地方</label>
-          <select id="concern">
-            <option value="eyes">眼睛泡／眼妝不明顯</option>
-            <option value="brow">眉毛不對稱</option>
-            <option value="base">底妝不持久</option>
-            <option value="color">不知道適合什麼顏色</option>
-          </select>
-
-          <button onclick="generateResult()">產生妝容建議</button>
-          <div id="result" class="result">選擇條件後，點擊按鈕產生示範結果。</div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>可商品化服務</h2>
-        <div class="service"><b>AI 快速妝容診斷</b><p>免費或低價引流，適合 Threads 私訊互動。</p><strong>NT$ 0–299</strong></div>
-        <div class="service"><b>演唱會妝容設計</b><p>依藝人、座位、應援色、穿搭規劃妝髮。</p><strong>NT$ 699 起</strong></div>
-        <div class="service"><b>一對一妝容教學</b><p>帶著自己的彩妝品來，學會適合自己的日常妝。</p><strong>NT$ 1,200 起</strong></div>
-      </div>
-    </section>
-
-    <section class="cards">
-      <article><h2>演唱會妝容服務</h2><p>不只化妝，而是幫粉絲做「當天造型企劃」：應援色、拍照顯色、不易脫妝、髮型搭配。</p></article>
-      <article><h2>美甲＋妝容搭配</h2><p>讓美甲從單次作品變成整體造型，提高客單價，也更容易被分享。</p></article>
-      <article><h2>長照研究室互惠</h2><p>主題可走「照顧別人之前，也要照顧自己」：長照人上班妝、照顧者放鬆日、媽媽妝教學。</p></article>
-    </section>
-
-    <section class="conclusion">
-      <h2>提案結論</h2>
-      <p>這個專頁在 Threads 的切入點不是「我會化妝／我會做美甲」，而是「我懂你為什麼卡住，也能用簡單方式幫你變好看」。</p>
-    </section>
-  </main>
-
-  <footer>Threads Beauty AI Demo｜可直接部署至 GitHub Pages</footer>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
